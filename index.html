@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>reveal.js</title>
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/moon.css">
+		
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="plugin/highlight/zenburn.css">
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+					<h1>Cloud FinOps</h1>
+					<h2 style="margin: 0px">Estrategias de ahorro en la nube</h2>
+					<h4>Cómo optimizar tu factura cloud</h4>
+					<small style="margin-top: 2em;">AWS Community Day Spain 2024 | Cristina Rancaño && Ramiro Alvarez</small>
+				</section>
+				<section>
+					<h2>Quiénes somos?</h2>
+					<ul>
+						<li>DevOps Engineer</li>
+						<li><strong>Helmcode</strong>:  </li>
+						<li><strong>Ozona.tech</strong>:  </li>
+						<li>AWS Solutions Architect, newbie</li>
+					</ul>
+          <small style="margin-top: 2em;">Cristina Rancaño</small>
+				</section>
+				<section>
+					<h2>Quiénes somos?</h2>
+					<ul>
+						<li>Platform Engineer Architect</li>
+						<li><strong>Empathy.co</strong>: e-commerce search, personalization</li>
+						<li><strong>Resizes</strong>: build Internal Developer Platforms </li>
+						<li><strong>Certifications</strong>:Kubeastronaut, FinOps Certified Engineer, +30 </li>
+					</ul>
+					<small style="margin-top: 2em;">Ramiro Alvarez</small>
+				</section>
+				
+				<section> 
+					<h2>Agenda</h2>
+					<ul>
+						<li>¿Qué es FinOps?</li>
+						<li>Fases en FinOps</li>
+						<li>Sostenibilidad</li>
+						<li>Optimizaciones</li>
+						<li>Recomendaciones</li>
+						<li>Conclusiones</li>
+						<li>Q&A</li>
+				</section>
+				<section>
+					<h2>¿FinOps?</h2>
+					<ul>
+						<li>Práctica cultural.</li>
+						<li>Connseguir el máximo valor del negocio ayudando a ingeniería, finanzas y negocio a colaborar</li>
+						<li>Hacer dinero para poder usarlo en innovación, experimentación...</li>
+					</ul>
+				</section>
+				<section>
+					<h2>FinOps fases</h2>
+					<img src="https://www.finops.org/wp-content/uploads/2024/03/Overview-Phases-16_9.svg" alt="FinOpsFases" height="350px">
+					<ul>
+						<li>Visibilidad de costes</li>
+						<li>Oportunidades de mejora de costes</li>
+						<li>Mejora continua</li>
+					</ul>
+				</section>
+        <section>
+					<h2>Sostenibilidad</h2>
+					<img src="img/awsbill.png" alt="FinOps" height="width: 100%; height: auto;">
+				</section>
+				<section>
+					<h2>Sostenibilidad</h2>
+					<img src="https://learn.finops.org/content/wp/2gjvzwpuixf0t/cyggnt7raax9/scormcontent/assets/VVKhaVFmn5Pff_KB_hQf7nPJgyD4EHovt.png" alt="FinOps" height="width: 100%; height: auto;">
+				</section>
+        <section>
+					<h2>Sostenibilidad</h2>
+					<img src="https://images.unsplash.com/photo-1425913397330-cf8af2ff40a1?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="FinOps" height="500px">
+				</section>
+        <section>
+					<h2>Optimizaciones: Rightsizing</h2>
+					<pre><code data-trim data-noescape style="max-height: 600px;">
+						resources:
+        requests:
+								memory: "1Gi"
+								cpu: 1
+							limits:
+								memory: "1Gi"
+								cpu: 1
+					
+								</code></pre>
+					<small style="margin-top: 1em;">Reducir lo que usamos </small>
+				</section>
+        <section>
+					<h2>Optimizaciones: Rightsizing</h2>
+          Captura de kubecost con los savings					
+					<small style="margin-top: 1em;">Reducir lo que usamos </small>
+				</section>
+				<section>
+					<h2>Optimizaciones: Rightsizing</h2>
+					<pre><code data-trim data-noescape style="max-height: 600px;">
+						resources:
+        requests:
+								memory: "64Mi"
+								cpu: "250m"
+							limits:
+								memory: "128Mi"
+								cpu: "500m"
+					
+								</code></pre>
+					<small style="margin-top: 1em;">Reducir lo que usamos </small>
+				</section>
+        <section>
+					<h2>Optimizaciones: Rightsizing</h2>
+					Imagen del impacto en costes de rightsizing
+					<small style="margin-top: 1em;">Reducir lo que usamos </small>
+				</section>
+        <section>
+					<h2>Optimizaciones: Downscale off hours</h2>
+          Cluster: 300€/día => 2100€/semana => 8400€/mes => 10000€/mes => 120000€/año
+
+          Quizás meter transiciones aquí
+					<small>Reducir lo que usamos | Downscale resources off hours </small>
+				</section>
+				<section>
+					<h2>Optimizaciones: Downscale off hours</h2>
+					<table>
+						<thead><tr>
+							<th>Downscale 8h and weekends</th>
+							<th>Downscale 12h and weekends</th>
+						</tr></thead>
+						<tbody><tr>
+							<td>1000€/semana</td>
+							<td>750€/semana</td>
+						</tr>
+						<tr>
+							<td>Ahorro 52%</td>
+							<td>Ahorro 65%</td>
+						</tr>
+					</tbody>
+					</table>
+					<small style="margin-top: 1em;">Reducir lo que usamos | Downscale resources off hours </small>
+				</section>
+				<section>
+					<h2>Optimizaciones: Unused workloads</h2>
+					<img src="https://learn.finops.org/content/wp/2gjvzwpuixf0t/cyggnt7raax9/scormcontent/assets/VVKhaVFmn5Pff_KB_hQf7nPJgyD4EHovt.png" alt="FinOps" height="width: 100%; height: auto;">
+					<small style="margin-top: 1em;">Reducir lo que usamos | Unused workloads </small>
+				</section>
+				<section>
+					<h2>Optimizaciones: Embrace Cloud Native</h2>
+					<img src="img/diagramredis.png" alt="FinOps" height="350px">
+					<small style="margin-top: 1em;">Reducir lo que usamos | Embrace Cloud Native </small>
+				</section>
+        <section>
+					<h2>Optimizaciones: Embrace Cloud Native</h2>
+					<img src="img/redisusage.png" alt="FinOps" height="350px">
+					<small style="margin-top: 1em;">Reducir lo que usamos | Embrace Cloud Native </small>
+				</section>
+				<section>
+					<h2>Optimizaciones: Reserva de instancias</h2>
+					poner un tipo de instancia e incidir en las diferencias de costes
+					<small style="margin-top: 1em;">Pagar menos por lo que usamos | Reserva de Instancias </small>
+				</section>
+				<section>
+					<h2>Optimizaciones</h2>
+					Comentar coverage 
+					<small style="margin-top: 1em;">Pagar menos por lo que usamos | Saving Plans </small>
+				</section>
+				<section>
+					<h2>Optimizaciones</h2>
+					Con una buena gestión se podría usar spot instances en lugar de ondemand incluso en entornos de alta disponibilidad con un montón de 9's
+					<small style="margin-top: 1em;">Pagar menos por lo que usamos | Spot Instances </small>
+				</section>
+        <section>
+					<h2>Optimizaciones</h2>
+					Reducir lo que gastamos el ahorro supuso tanto
+          Pagar menos por lo que usamos el ahorro es tanto 
+          Conjunto tanto
+				</section>
+
+				<section>
+					<h2>Recomendaciones</h2>
+					<table>
+						<thead><tr>
+							<th>Potenciales Ahorros</th>
+							<th>Oportunidad de Optimización</th>
+						</tr></thead>
+						<tbody><tr>
+							<td>Evitar el 100%</td>
+							<td>Encontrar y eliminar o apagar cosas sin uso</td>
+						</tr>
+						<tr>
+							<td>Ahorro 50%</td>
+							<td>Consistencia en el uso</td>
+						</tr>
+						<tr>
+							<td>Ahorro 25%</td>
+							<td>Rightsizing o modernización</td>
+						</tr>
+						<tr>
+							<td>Ahorro 1-100%</td>
+							<td>Probar cosas diferentes para entregar el mismo valor</td>
+						</tr>
+					</tbody>
+					</table>
+				
+				</section>
+        <section>
+					<h2>Conclusiones</h2>
+          <ul>
+            <li>Balancear coste, velocidad y calidad</li>
+            <li>Optimizaciones</li>
+            <li>Reducir el uso</li>
+            <li>Pagar menos haciendo commitmments</li>
+            <li>FinOps Champion</li>
+          </ul>  
+				</section>
+        <section>
+					<h2>Q&A</h2>
+				</section>
+
+			</div>
+		</div>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+        history: true,
+        controls: true,  
+        width: 1200,
+        transition: 'slide', // none/fade/slide/convex/concave/zoom
+        slideNumber: true,
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+			});
+		</script>
+	</body>
+</html>
