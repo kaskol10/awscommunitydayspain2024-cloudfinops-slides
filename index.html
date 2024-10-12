@@ -24,24 +24,25 @@
 					<small style="margin-top: 2em;">AWS Community Day Spain 2024 | Cristina Rancaño && Ramiro Alvarez</small>
 				</section>
 				<section>
-					<h2>Quiénes somos?</h2>
+					<h2>¿Quiénes somos?</h2>
 					<ul>
 						<li>DevOps Engineer</li>
 						<li><strong>Helmcode</strong>: DevOps as A Service </li>
 						<li><strong>Ozona.tech</strong>: Digital transformation, Internal DevOps </li>
-						<li><strong>Curiosidades</strong>AWS Solutions Architect, ex-peluquera/esteticista</li>
+						<li><strong>More</strong>: AWS Solutions Architect, impostor, 1st talk!</li>
 					</ul>
-         		 <small style="margin-top: 2em;">Cristina Rancaño</small>
+					<table></table>
+         		 <small style="margin-top: 1em;">Cristina Rancaño Fernandez</small>
 				</section>
 				<section>
-					<h2>Quiénes somos?</h2>
+					<h2>¿Quiénes somos?</h2>
 					<ul>
 						<li>Platform Engineer Architect</li>
 						<li><strong>Empathy.co</strong>: e-commerce search, personalization</li>
 						<li><strong>Resizes</strong>: build Internal Developer Platforms </li>
-						<li><strong>Certs</strong>: Kubeastronaut, FinOps Certified Engineer, 28 certs </li>
+						<li><strong>More</strong>: Kubestronaut, FinOps Certified Engineer, 28 certs, speaker </li>
 					</ul>
-					<small style="margin-top: 2em;">Ramiro Alvarez</small>
+					<small style="margin-top: 1em;">Ramiro Alvarez Fernandez</small>
 				</section>
 				
 				<section> 
@@ -58,8 +59,8 @@
 				<section>
 					<h2>¿FinOps?</h2>
 					<ul>
-						<li>Práctica cultural.</li>
-						<li>Connseguir el máximo valor del negocio ayudando a ingeniería, finanzas y negocio a colaborar</li>
+						<li>Práctica cultural</li>
+						<li>Maximizar el valor del negocio a través de la colaboración de ingeniería, finanzas y negocio</li>
 						<li>Hacer dinero para poder usarlo en innovación, experimentación...</li>
 					</ul>
 				</section>
@@ -88,9 +89,9 @@
 				<section>
 					<h2>Sostenibilidad</h2>
 					<ul>
-						<li>Inversores están pidiendo a los ejecutivos ser conscientes de las emisiones</li>
+						<li>Conciencia medioambiental</li>
 						<li>Regulaciones</li>
-						<li>Compras basadas en ética</li>
+						<li>Ética de compras</li>
 						<li>Empleados requieren ser más sostenibles</li>
 					</ul>
 				</section>
@@ -106,7 +107,7 @@
 							<li>Rightsizing</li>
 							<li>Downscale off hours</li>
 							<li>Aplicaciones sin uso</li>
-							<li>Adoptar tecnologías Cloud Native</li>
+							<li>Migración Cloud Native</li>
 						</ul>
 						<li class="fragment">Pagar menos por lo que usamos (reducción de la tarifa)</li>
 						<ul class="fragment">
@@ -131,6 +132,11 @@
 								</code></pre>
 					<small style="margin-top: 1em;">Reducir lo que usamos </small>
 				</section>
+		<section>
+					<h2>Optimizaciones: Unused workloads</h2>
+					<img src="https://learn.finops.org/content/wp/2gjvzwpuixf0t/cyggnt7raax9/scormcontent/assets/VVKhaVFmn5Pff_KB_hQf7nPJgyD4EHovt.png" alt="FinOps" height="width: 100%; height: auto;">
+					<small style="margin-top: 1em;">Reducir lo que usamos | Unused workloads </small>
+				</section>
         <section>
 					<h2>Optimizaciones: Rightsizing</h2>
           Captura de kubecost con los savings					
@@ -141,58 +147,46 @@
 					<pre><code data-trim data-noescape style="max-height: 600px;">
 						resources:
         requests:
-								memory: "64Mi"
-								cpu: "250m"
+								memory: "500Mi"
+								cpu: "100m"
 							limits:
-								memory: "128Mi"
-								cpu: "500m"
+								memory: "500Mi"
+								cpu: "100m"
 					
 								</code></pre>
 					<small style="margin-top: 1em;">Reducir lo que usamos </small>
 				</section>
         <section>
 					<h2>Optimizaciones: Rightsizing</h2>
-					Imagen del impacto en costes de rightsizing
-					<small style="margin-top: 1em;">Reducir lo que usamos </small>
-				</section>
-        <section>
-					<h2>Optimizaciones: Downscale off hours</h2>
-
 					<table>
 						<thead><tr>
+							<th>Tipo</th>
 							<th>€/Día</th>
 							<th>€/Semana</th>
 							<th>€/Mes</th>
 							<th>€/Año</th>
+							<th>Ahorros</th>
 						</tr></thead>
-						<tbody><tr>
-							<td>300</td>
+						<tbody><tr class="fragment">
+							<td>-</td>
 							<td>2100</td>
+							<td>€/Día</td>
+							<td>€/Semana</td>
 							<td>8400</td>
 							<td>100800</td>
+							<td>-</td>
+						</tr><tr class="fragment">
+							<td>Rightsizing</td>
+							<td>1000</td>
+							<td>€/Día</td>
+							<td>€/Semana</td>
+							<td>4000</td>
+							<td>48000</td>
+							<td>52%</td>
 						</tr>
 					</tbody>
 					</table>
-					<small>Reducir lo que usamos | Downscale resources off hours </small>
-				</section>
-				<section>
-					<h2>Optimizaciones: Downscale off hours</h2>
-					<table>
-						<thead><tr>
-							<th>Downscale 8h and weekends</th>
-							<th>Downscale 12h and weekends</th>
-						</tr></thead>
-						<tbody><tr>
-							<td>1000€/semana</td>
-							<td>750€/semana</td>
-						</tr>
-						<tr>
-							<td>Ahorro 52%</td>
-							<td>Ahorro 65%</td>
-						</tr>
-					</tbody>
-					</table>
-					<small style="margin-top: 1em;">Reducir lo que usamos | Downscale resources off hours </small>
+					<small style="margin-top: 1em;">Reducir lo que usamos </small>
 				</section>
 				<section>
 					<h2>Optimizaciones: Downscale off hours</h2>
@@ -204,19 +198,19 @@
 							<th>€/Año</th>
 							<th>Ahorros</th>
 						</tr></thead>
-						<tbody><tr>
+						<tbody><tr class="fragment">
 							<td>24/7</td>
 							<td>2100</td>
 							<td>8400</td>
 							<td>100800</td>
 							<td>-</td>
-						</tr><tr>
+						</tr><tr class="fragment">
 							<td>8h down</td>
 							<td>1000</td>
 							<td>4000</td>
 							<td>48000</td>
 							<td>52%</td>
-						</tr><tr>
+						</tr><tr class="fragment">
 							<td>12h down</td>
 							<td>750</td>
 							<td>3000</td>
@@ -225,20 +219,15 @@
 						</tr>
 					</tbody>
 					</table>
-					<small>Reducir lo que usamos | Downscale resources off hours </small>
+					<small style="margin-top: 1em;">Reducir lo que usamos | Downscale resources off hours </small>
 				</section>
 				<section>
-					<h2>Optimizaciones: Unused workloads</h2>
-					<img src="https://learn.finops.org/content/wp/2gjvzwpuixf0t/cyggnt7raax9/scormcontent/assets/VVKhaVFmn5Pff_KB_hQf7nPJgyD4EHovt.png" alt="FinOps" height="width: 100%; height: auto;">
-					<small style="margin-top: 1em;">Reducir lo que usamos | Unused workloads </small>
-				</section>
-				<section>
-					<h2>Optimizaciones: Unused workloads</h2>
+					<h2>Optimizaciones: Aplicaciones sin uso</h2>
 					<img src="img/unused.png" alt="FinOps" height="400px">
-					<small style="margin-top: 1em;">Reducir lo que usamos | Unused workloads </small>
+					<small style="margin-top: 1em;">Reducir lo que usamos | Aplicaciones sin uso </small>
 				</section>
 				<section>
-					<h2>Optimizaciones: Unused workloads</h2>
+					<h2>Optimizaciones: Aplicaciones sin uso</h2>
 					<table>
 						<thead><tr>
 							<th>€/Semana</th>
@@ -252,22 +241,23 @@
 						</tr>
 					</tbody>
 					</table>
-					<small style="margin-top: 1em;">Reducir lo que usamos | Unused workloads </small>
+					<small style="margin-top: 1em;">Reducir lo que usamos | Aplicaciones sin uso </small>
 				</section>
 				<section>
-					<h2>Optimizaciones: Unused workloads</h2>
-					<img src="img/honest.jpg" alt="HonestWork" height="400px">
-					<small style="margin-top: 1em;">Reducir lo que usamos | Unused workloads </small>
+					<h2>Optimizaciones: Aplicaciones sin uso</h2>
+					<img src="img/honest.jpg" alt="HonestWork" height="350px">
+					<table></table>
+					<small style="margin-top: 0em;">Reducir lo que usamos | Aplicaciones sin uso </small>
 				</section>
 				<section>
-					<h2>Optimizaciones: Embrace Cloud Native</h2>
+					<h2>Optimizaciones: Migración Cloud Native</h2>
 					<img src="img/diagramredis.png" alt="FinOps" height="350px">
-					<small style="margin-top: 1em;">Reducir lo que usamos | Embrace Cloud Native </small>
+					<small style="margin-top: 1em;">Reducir lo que usamos | Migración Cloud Native </small>
 				</section>
         <section>
-					<h2>Optimizaciones: Embrace Cloud Native</h2>
+					<h2>Optimizaciones: Migración Cloud Native</h2>
 					<img src="img/redisusage.png" alt="FinOps" height="350px">
-					<small style="margin-top: 1em;">Reducir lo que usamos | Embrace Cloud Native </small>
+					<small style="margin-top: 1em;">Reducir lo que usamos | Migración Cloud Native </small>
 				</section>
 				<section>
 					<h2>Optimizaciones: Evitar costes</h2>
@@ -293,9 +283,9 @@
 							<td>65%()</td>
 						</tr><tr>
 							<td>Unused workloads</td>
-							<td>750</td>
-							<td>3000</td>
-							<td>36000</td>
+							<td>14</td>
+							<td>56</td>
+							<td>672</td>
 							<td>65%()</td>
 						</tr><tr>
 							<td>Embrace cloud native</td>
@@ -304,6 +294,14 @@
 							<td>36000</td>
 							<td>65%()</td>
 						</tr>
+						<tr>
+							<td>Total</td>
+							<td>750</td>
+							<td>3000</td>
+							<td>36000</td>
+							<td>65%()</td>
+						</tr>
+
 					</tbody>
 					</table>
 					
@@ -355,6 +353,7 @@
 						<li>EC2 Instance Savings Plans</li>
 						<li>SageMaker Savings Plans</li>
 					</ul>
+					<table></table>
 					<small style="margin-top: 1em;">Pagar menos por lo que usamos | Saving Plans </small>
 				</section>
 				<section>
@@ -413,7 +412,7 @@
 							<td>30.5</td>
 							<td>366</td>
 							<td>1098</td>
-							<td>34%()</td>
+							<td>34%(563€)</td>
 						</tr><tr>
 							<td>Saving plans</td>
 							<td>41</td>
@@ -502,9 +501,10 @@
           <ul>
             <li>Balancear coste, velocidad y calidad</li>
             <li>Optimizaciones</li>
-            <li>Reducir el uso</li>
-            <li>Pagar menos haciendo commitmments</li>
-            <li>FinOps Champion</li>
+			<ul>
+				<li>Reducir el uso ineficiente</li>
+				<li>Pagar menos haciendo commitmments</li>
+			</ul>
           </ul>  
 				</section>
         <section>
