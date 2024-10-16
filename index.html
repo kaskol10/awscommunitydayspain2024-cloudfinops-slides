@@ -120,7 +120,7 @@
 				</section>
 				<section>
 					<h2>Optimizaciones</h2>
-					<img src="https://learn.finops.org/content/wp/2gjvzwpuixf0t/cyggnt7raax9/scormcontent/assets/VVKhaVFmn5Pff_KB_hQf7nPJgyD4EHovt.png" alt="FinOps" height="width: 100%; height: auto;">
+					<img src="img/optimization.png" alt="FinOps" height="width: 100%; height: auto;">
 				</section>
 				
 				<section>
@@ -132,19 +132,14 @@
 					<pre><code data-trim data-noescape style="max-height: 600px;">
 						resources:
         requests:
-								memory: "1Gi"
+								memory: "2.5Gi"
 								cpu: 1
 							limits:
-								memory: "1Gi"
+								memory: "2.5Gi"
 								cpu: 1
 					
 								</code></pre>
 					<small style="margin-top: 1em;">Reducir lo que usamos </small>
-				</section>
-		<section>
-					<h2>Optimizaciones: Unused workloads</h2>
-					<img src="https://learn.finops.org/content/wp/2gjvzwpuixf0t/cyggnt7raax9/scormcontent/assets/VVKhaVFmn5Pff_KB_hQf7nPJgyD4EHovt.png" alt="FinOps" height="width: 100%; height: auto;">
-					<small style="margin-top: 1em;">Reducir lo que usamos | Unused workloads </small>
 				</section>
         <section>
 					<h2>Optimizaciones: Rightsizing</h2>
@@ -156,11 +151,11 @@
 					<pre><code data-trim data-noescape style="max-height: 600px;">
 						resources:
         requests:
-								memory: "500Mi"
-								cpu: "100m"
+								memory: "1.25Gi"
+								cpu: "400m"
 							limits:
-								memory: "500Mi"
-								cpu: "100m"
+								memory: "1.25Gi"
+								cpu: "400m"
 					
 								</code></pre>
 					<small style="margin-top: 1em;">Reducir lo que usamos </small>
@@ -174,24 +169,29 @@
 							<th>€/Semana</th>
 							<th>€/Mes</th>
 							<th>€/Año</th>
-							<th>Ahorros</th>
+							
 						</tr></thead>
-						<tbody><tr class="fragment">
-							<td>-</td>
-							<td>2100</td>
-							<td>€/Día</td>
-							<td>€/Semana</td>
-							<td>8400</td>
-							<td>100800</td>
-							<td>-</td>
-						</tr><tr class="fragment">
+						<tbody><tr>
+							<td>Base</td>
+							<td>0,46</td>
+							<td>3,22</td>
+							<td>13,8</td>
+							<td>167,9</td>
+							
+						</tr><tr>
 							<td>Rightsizing</td>
-							<td>1000</td>
-							<td>€/Día</td>
-							<td>€/Semana</td>
-							<td>4000</td>
-							<td>48000</td>
-							<td>52%</td>
+							<td>0,38</td>
+							<td>2,66</td>
+							<td>11,4</td>
+							<td>138,7</td>
+							
+						</tr><tr>
+							<td>Ahorro</td>
+							<td>0,08</td>
+							<td>0,56</td>
+							<td>2,4</td>
+							<td>29,2 (17%)</td>
+							
 						</tr>
 					</tbody>
 					</table>
@@ -217,26 +217,26 @@
 							<th>€/Semana</th>
 							<th>€/Mes</th>
 							<th>€/Año</th>
-							<th>Ahorros</th>
+							<th>Ahorros/año</th>
 						</tr></thead>
-						<tbody><tr class="fragment">
+						<tbody><tr>
 							<td>24/7</td>
 							<td>2100</td>
 							<td>8400</td>
 							<td>100800</td>
 							<td>-</td>
-						</tr><tr class="fragment">
+						</tr><tr>
 							<td>8h down</td>
 							<td>1000</td>
 							<td>4000</td>
 							<td>48000</td>
-							<td>52%</td>
-						</tr><tr class="fragment">
+							<td>52,38% | 52800€</td>
+						</tr><tr>
 							<td>12h down</td>
 							<td>750</td>
 							<td>3000</td>
 							<td>36000</td>
-							<td>65%</td>
+							<td>64,29% | 64800€</td>
 						</tr>
 					</tbody>
 					</table>
@@ -288,6 +288,35 @@
 					<table></table>
 					<small style="margin-top: 1em;">Reducir lo que usamos | Migración Cloud Native </small>
 				</section>
+				<section>
+					<h2>Optimizaciones: Migración Cloud Native</h2>
+					<table>
+						<thead><tr>
+							<th>Tipo</th>
+							<th>€/Semana</th>
+							<th>€/Mes</th>
+							<th>€/Año</th>
+						</tr></thead>
+						<tbody><tr>
+							<td>AWS Elasticache</td>
+							<td>5,208</td>
+							<td>156,24</td>
+							<td>1874,88</td>
+						</tr><tr>
+							<td>Redis K8s</td>
+							<td>15,12</td>
+							<td>60,48</td>
+							<td>725,76</td>
+						</tr><tr>
+							<td>Ahorros</td>
+							<td>9,91</td>
+							<td>95,76</td>
+							<td>1149,12 | 61%</td>
+						</tr>
+					</tbody>
+					</table>
+					<small style="margin-top: 1em;">Reducir lo que usamos | Aplicaciones sin uso </small>
+				</section>
         <section>
 					<h2>Optimizaciones: Migración Cloud Native</h2>
 					<img src="img/redisusage.png" alt="FinOps" height="350px">
@@ -302,39 +331,39 @@
 							<th>€/Semana</th>
 							<th>€/Mes</th>
 							<th>€/Año</th>
-							<th>Ahorro </th>
+							<th>Ahorro</th>
 						</tr></thead>
 						<tbody><tr>
 							<td>Rightsizing</td>
-							<td>2100</td>
-							<td>8400</td>
-							<td>100800</td>
-							<td>-</td>
+							<td>0,56</td>
+							<td>2,4</td>
+							<td>29,2</td>
+							<td>17%</td>
 						</tr><tr>
 							<td>Off Hours 12h down</td>
-							<td>750</td>
-							<td>3000</td>
-							<td>36000</td>
-							<td>65%()</td>
+							<td>1350</td>
+							<td>5400</td>
+							<td>64800</td>
+							<td>64,29%</td>
 						</tr><tr>
 							<td>Unused workloads</td>
 							<td>14</td>
 							<td>56</td>
 							<td>672</td>
-							<td>65%()</td>
+							<td>100%</td>
 						</tr><tr>
 							<td>Embrace cloud native</td>
-							<td>750</td>
-							<td>3000</td>
-							<td>36000</td>
-							<td>65%()</td>
+							<td>9,91</td>
+							<td>95,76</td>
+							<td>1149,12</td>
+							<td>61%</td>
 						</tr>
 						<tr>
 							<td>Total</td>
-							<td>750</td>
-							<td>3000</td>
-							<td>36000</td>
-							<td>65%()</td>
+							<td>1374</td>
+							<td>5554</td>
+							<td>66650</td>
+							<td>64%</td>
 						</tr>
 
 					</tbody>
@@ -460,36 +489,36 @@
 					<h2>Optimizaciones: Reducción de tarifa</h2>
 					<table class="fragment">
 						<thead><tr>
-							<th>Tipo</th>
+							<th>Ahorro</th>
 							<th>€/día</th>
 							<th>€/Mes</th>
 							<th>€/Año</th>
-							<th>Ahorro </th>
+							<th>Porcentaje </th>
 						</tr></thead>
 						<tbody><tr>
 							<td>Reserva de instancias</td>
-							<td>30.5</td>
-							<td>366</td>
-							<td>1098</td>
-							<td>34%(563€)</td>
+							<td>15.5</td>
+							<td>186</td>
+							<td>558</td>
+							<td>34%</td>
 						</tr><tr>
 							<td>Saving plans</td>
-							<td>41</td>
-							<td>1228</td>
-							<td>14736</td>
-							<td>28%()</td>
+							<td>16</td>
+							<td>477,5</td>
+							<td>5730</td>
+							<td>28%</td>
 						</tr><tr>
 							<td>Spot instances</td>
-							<td>54</td>
-							<td>324</td>
-							<td>3942</td>
-							<td>59%()</td>
+							<td>37,5</td>
+							<td>225</td>
+							<td>2739</td>
+							<td>59%</td>
 						</tr><tr>
 							<td>Total</td>
-							<td>125.5</td>
-							<td>1918</td>
-							<td>19776</td>
-							<td>Calcular</td>
+							<td>69</td>
+							<td>888,5</td>
+							<td>9027</td>
+							<td>28,5%</td>
 						</tr>
 					</tbody>
 					</table>
@@ -507,22 +536,22 @@
 						</tr></thead>
 						<tbody><tr>
 							<td>Evitar costes</td>
-							<td>2100</td>
-							<td>8400</td>
-							<td>100800</td>
-							<td>-</td>
+							<td>1374</td>
+							<td>5554</td>
+							<td>66650</td>
+							<td>64%</td>
 						</tr><tr>
 							<td>Reducción de la tarifa</td>
-							<td>750</td>
-							<td>3000</td>
-							<td>36000</td>
-							<td>65%</td>
+							<td>69</td>
+							<td>888,5</td>
+							<td>9027</td>
+							<td>28,5%</td>
 						</tr><tr>
 							<td>Total</td>
-							<td>750</td>
-							<td>3000</td>
-							<td>36000</td>
-							<td>65%</td>
+							<td>1443</td>
+							<td>6442,5</td>
+							<td>75677</td> 
+							<td>55,7%</td>
 						</tr>
 					</tbody>
 					</table>
